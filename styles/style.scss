@@ -1,0 +1,585 @@
+$brightBlue: hsl(220, 98%, 61%);
+
+//Light Theme
+
+$LveryLightGray: hsl(0, 0%, 98%);
+$LveryLightGrayishBlue: hsl(236, 33%, 92%);
+$LlightGrayishBlue: hsl(233, 11%, 84%);
+$LdarkGrayishBlue: hsl(236, 9%, 61%);
+$LveryDarkGrayishBlue: hsl(235, 19%, 35%);
+// - Very Light Gray: hsl(0, 0%, 98%)
+// - Very Light Grayish Blue: hsl(236, 33%, 92%)
+// - Light Grayish Blue: hsl(233, 11%, 84%)
+// - Dark Grayish Blue: hsl(236, 9%, 61%)
+// - Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+//Dark Theme
+
+$DveryDarkBlue: hsl(235, 21%, 11%);
+$DveryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$DlightGrayishBlue: hsl(234, 39%, 85%);
+$DlightGrayishBlueHover: hsl(236, 33%, 92%);
+$DdarkGrayishBlue: hsl(234, 11%, 52%);
+$DveryDarkGrayishBlue: hsl(233, 14%, 35%);
+$DveryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+// - Very Dark Blue: hsl(235, 21%, 11%)
+// - Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+// - Light Grayish Blue: hsl(234, 39%, 85%)
+// - Light Grayish Blue (hover): hsl(236, 33%, 92%)
+// - Dark Grayish Blue: hsl(234, 11%, 52%)
+// - Very Dark Grayish Blue: hsl(233, 14%, 35%)
+// - Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+	overflow-y: hidden;
+	transition: all 200ms ease;
+}
+
+.light-bg {
+	header {
+		background-image: url("../images/bg-desktop-light.jpg");
+		height: 300px;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		position: relative;
+		z-index: 2;
+	}
+
+	.empty-space {
+		span {
+			position: absolute;
+			bottom: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 1.6rem;
+			color: $LdarkGrayishBlue;
+			text-align: center;
+		}
+	}
+
+	.todos-bg {
+		height: 100vh;
+		width: 100%;
+		background-color: transparent;
+		position: fixed;
+		top: 0%;
+		overflow-y: auto;
+		z-index: 3;
+		main {
+			background-color: transparent;
+			width: 480px;
+			margin: auto;
+			transform: translateY(70px);
+
+			.title {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+				h6 {
+					font-size: 3.2rem;
+					letter-spacing: 10px;
+					font-weight: 700;
+					color: white;
+				}
+				button {
+					margin-left: auto;
+					cursor: pointer;
+					background-color: transparent;
+					border: none;
+				}
+			}
+			form {
+				position: relative;
+				z-index: 3;
+				background-color: rgb(255, 255, 255);
+				display: flex;
+				align-items: center;
+				height: 70px;
+				border-radius: 5px;
+
+				.circle {
+					height: 20px;
+					width: 20px;
+					background-color: transparent;
+					border-radius: 50%;
+					margin-right: auto;
+					margin-left: 20px;
+					border: 1px solid $LlightGrayishBlue;
+					cursor: pointer;
+				}
+				input {
+					height: 100%;
+					width: 85%;
+					border: none;
+					border-radius: 0px 5px 5px 0px;
+					font-size: 1.8rem;
+					padding-right: 20px;
+					font-family: "Josefin Sans", sans-serif;
+					color: $LveryDarkGrayishBlue;
+					background-color: transparent;
+				}
+				input:focus {
+					outline: none;
+				}
+				margin-bottom: 20px;
+			}
+			.todos {
+				.todo-options {
+					height: 70px;
+					width: 100%;
+					background-color: white;
+					border-radius: 0px 0px 5px 5px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 20px;
+					.count {
+						span {
+							font-size: 1.4rem;
+							color: $LdarkGrayishBlue;
+							font-weight: 700;
+						}
+					}
+					.options {
+						display: flex;
+						width: 35%;
+						justify-content: space-between;
+					}
+					button {
+						font-size: 1.4rem;
+						background-color: transparent;
+						border: none;
+						color: $LdarkGrayishBlue;
+						font-weight: 700;
+						cursor: pointer;
+						transition: 200ms ease;
+					}
+					button:hover {
+						color: $LveryDarkGrayishBlue;
+					}
+					.active {
+						color: $brightBlue;
+					}
+				}
+				position: relative;
+				height: auto;
+				width: 100%;
+				background-color: transparent;
+				border-radius: 5px 5px 0px 0px;
+				box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+				.todo-list {
+					li:nth-child(1) {
+						border-radius: 5px 5px 0px 0px;
+					}
+					li {
+						padding: 22px 0px;
+						list-style-type: none;
+						display: flex;
+						align-items: center;
+						background-image: linear-gradient(
+							to right,
+							rgb(214, 214, 214),
+							rgb(214, 214, 214)
+						);
+						background-repeat: no-repeat;
+						background-size: 99% 1px;
+						background-position: bottom;
+						background-color: white;
+						.not-complete {
+							height: 20px;
+							width: 20px;
+							background-color: rgb(255, 255, 255);
+							border-radius: 50%;
+							margin-right: auto;
+							margin-left: 20px;
+							border: 1px solid rgb(214, 214, 214);
+							cursor: pointer;
+						}
+						.completed {
+							background-image: linear-gradient(
+								to bottom right,
+								hsl(192, 100%, 67%),
+								hsl(280, 87%, 65%)
+							);
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+						span {
+							font-size: 1.8rem;
+							width: 73%;
+							margin-left: 20px;
+							margin-right: 20px;
+							color: $LveryDarkGrayishBlue;
+							transition: all 400ms ease;
+						}
+						.x {
+							margin-right: 20px;
+							cursor: pointer;
+							background-color: transparent;
+							border: none;
+						}
+
+						.completed-text {
+							color: $LlightGrayishBlue;
+							text-decoration: line-through;
+						}
+					}
+					@keyframes removeItem {
+						0% {
+							transform: translate(0);
+							opacity: 1;
+						}
+						100% {
+							transform: translateX(50px);
+							opacity: 0;
+						}
+					}
+				}
+			}
+			.mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+.dark-bg {
+	header {
+		background-image: url("../images/bg-desktop-dark.jpg");
+		height: 300px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 100%;
+	}
+
+	.empty-space {
+		span {
+			position: absolute;
+			bottom: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 1.6rem;
+			color: $LdarkGrayishBlue;
+			text-align: center;
+		}
+	}
+
+	.todos-bg {
+		height: 100vh;
+		width: 100%;
+		background-color: transparent;
+		position: fixed;
+		top: 0%;
+		overflow-y: auto;
+		main {
+			background-color: transparent;
+			width: 480px;
+			margin: auto;
+			transform: translateY(70px);
+
+			.title {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+				h6 {
+					font-size: 3.2rem;
+					letter-spacing: 10px;
+					font-weight: 700;
+					color: white;
+				}
+				button {
+					margin-left: auto;
+					cursor: pointer;
+					background-color: transparent;
+					border: none;
+				}
+			}
+			form {
+				position: relative;
+				z-index: 3;
+				background-color: $DveryDarkGrayishBlue;
+				display: flex;
+				align-items: center;
+				height: 70px;
+				border-radius: 5px;
+
+				.circle {
+					height: 20px;
+					width: 20px;
+					background-color: transparent;
+					border-radius: 50%;
+					margin-right: auto;
+					margin-left: 20px;
+					border: 1px solid $DdarkGrayishBlue;
+					cursor: pointer;
+				}
+				input {
+					height: 100%;
+					width: 85%;
+					border: none;
+					border-radius: 0px 5px 5px 0px;
+					font-size: 1.8rem;
+					padding-right: 20px;
+					font-family: "Josefin Sans", sans-serif;
+					color: $DlightGrayishBlue;
+					background-color: transparent;
+				}
+				input:focus {
+					outline: none;
+				}
+				margin-bottom: 20px;
+			}
+			.todos {
+				.mobile {
+					display: none;
+				}
+				.todo-options {
+					height: 70px;
+					width: 100%;
+					background-color: $DveryDarkGrayishBlue;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 20px;
+
+					.count {
+						span {
+							font-size: 1.4rem;
+							color: $LdarkGrayishBlue;
+							font-weight: 700;
+						}
+					}
+					.options {
+						display: flex;
+						width: 35%;
+						justify-content: space-between;
+					}
+					button {
+						font-size: 1.4rem;
+						background-color: transparent;
+						border: none;
+						color: $LdarkGrayishBlue;
+						font-weight: 700;
+						cursor: pointer;
+						transition: 200ms ease;
+					}
+					button:hover {
+						color: white;
+					}
+					.active {
+						color: $brightBlue;
+					}
+				}
+				position: relative;
+				height: auto;
+				width: 100%;
+				background-color: transparent;
+				border-radius: 5px 5px 0px 0px;
+				box-shadow: 1px 1px 20px 0px $DdarkGrayishBlue;
+				.todo-list {
+					li:nth-child(1) {
+						border-radius: 5px 5px 0px 0px;
+					}
+					li {
+						padding: 22px 0px;
+						list-style-type: none;
+						display: flex;
+						align-items: center;
+						background-image: linear-gradient(
+							to right,
+							$DdarkGrayishBlue,
+							$DdarkGrayishBlue
+						);
+						background-repeat: no-repeat;
+						background-size: 99% 1px;
+						background-position: bottom;
+						background-color: $DveryDarkGrayishBlue;
+						.not-complete {
+							height: 20px;
+							width: 20px;
+							background-color: transparent;
+							border-radius: 50%;
+							margin-right: auto;
+							margin-left: 20px;
+							border: 1px solid $DdarkGrayishBlue;
+							cursor: pointer;
+						}
+						.completed {
+							background-image: linear-gradient(
+								to bottom right,
+								hsl(192, 100%, 67%),
+								hsl(280, 87%, 65%)
+							);
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+						span {
+							font-size: 1.8rem;
+							width: 73%;
+							margin-left: 20px;
+							margin-right: 20px;
+							color: $DlightGrayishBlue;
+							transition: all 400ms ease;
+						}
+						.x {
+							margin-right: 20px;
+							cursor: pointer;
+							background-color: transparent;
+							border: none;
+							svg {
+								path {
+									fill: $LveryLightGray;
+								}
+							}
+						}
+
+						.completed-text {
+							color: $DdarkGrayishBlue;
+							text-decoration: line-through;
+						}
+						@keyframes removeItem {
+							0% {
+								transform: translate(0);
+								opacity: 1;
+							}
+							100% {
+								transform: translateX(50px);
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+			.mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.light-bg {
+		header {
+			background-image: url("../images/bg-mobile-light.jpg");
+		}
+		.todos-bg {
+			main {
+				width: 80%;
+				min-width: 300px;
+				.todos {
+					margin-bottom: 20px;
+					.todo-options {
+						.desktop {
+							display: none;
+						}
+					}
+					.todo-list {
+						li {
+							.not-complete {
+								height: 20px;
+								width: 20px;
+								min-width: 20px;
+							}
+						}
+					}
+				}
+				.mobile {
+					height: 55px;
+					width: 100%;
+					background-color: rgb(255, 255, 255);
+					display: flex;
+					align-items: center;
+					justify-content: space-around;
+					margin: auto;
+					padding: 0px 80px;
+					box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+
+					button {
+						font-size: 1.4rem;
+						background-color: transparent;
+						border: none;
+						color: $LdarkGrayishBlue;
+						font-weight: 700;
+						cursor: pointer;
+						transition: 200ms ease;
+					}
+
+					.active {
+						color: $brightBlue;
+					}
+				}
+			}
+		}
+	}
+	.dark-bg {
+		header {
+			background-image: url("../images/bg-mobile-dark.jpg");
+		}
+		.todos-bg {
+			main {
+				width: 80%;
+				min-width: 300px;
+				.todos {
+					margin-bottom: 20px;
+					.todo-options {
+						.desktop {
+							display: none;
+						}
+					}
+				}
+				.todo-list {
+					li {
+						.not-complete {
+							height: 20px;
+							width: 20px;
+							min-width: 20px;
+						}
+					}
+				}
+
+				.mobile {
+					height: 55px;
+					width: 100%;
+					background-color: $DveryDarkGrayishBlue;
+					display: flex;
+					align-items: center;
+					justify-content: space-around;
+					margin: auto;
+					padding: 0px 80px;
+					box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+
+					button {
+						font-size: 1.4rem;
+						background-color: transparent;
+						border: none;
+						color: $LdarkGrayishBlue;
+						font-weight: 700;
+						cursor: pointer;
+						transition: 200ms ease;
+					}
+
+					.active {
+						color: $brightBlue;
+					}
+				}
+			}
+		}
+	}
+}

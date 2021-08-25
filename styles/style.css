@@ -1,0 +1,640 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  overflow-y: hidden;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.light-bg header {
+  background-image: url("../images/bg-desktop-light.jpg");
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.light-bg .empty-space span {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.6rem;
+  color: #9394a5;
+  text-align: center;
+}
+
+.light-bg .todos-bg {
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0%;
+  overflow-y: auto;
+  z-index: 3;
+}
+
+.light-bg .todos-bg main {
+  background-color: transparent;
+  width: 480px;
+  margin: auto;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+}
+
+.light-bg .todos-bg main .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.light-bg .todos-bg main .title h6 {
+  font-size: 3.2rem;
+  letter-spacing: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.light-bg .todos-bg main .title button {
+  margin-left: auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.light-bg .todos-bg main form {
+  position: relative;
+  z-index: 3;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.light-bg .todos-bg main form .circle {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: 20px;
+  border: 1px solid #d2d3db;
+  cursor: pointer;
+}
+
+.light-bg .todos-bg main form input {
+  height: 100%;
+  width: 85%;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1.8rem;
+  padding-right: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #484b6a;
+  background-color: transparent;
+}
+
+.light-bg .todos-bg main form input:focus {
+  outline: none;
+}
+
+.light-bg .todos-bg main .todos {
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px 5px 0px 0px;
+  -webkit-box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+          box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+}
+
+.light-bg .todos-bg main .todos .todo-options {
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.light-bg .todos-bg main .todos .todo-options .count span {
+  font-size: 1.4rem;
+  color: #9394a5;
+  font-weight: 700;
+}
+
+.light-bg .todos-bg main .todos .todo-options .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 35%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.light-bg .todos-bg main .todos .todo-options button {
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  color: #9394a5;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+.light-bg .todos-bg main .todos .todo-options button:hover {
+  color: #484b6a;
+}
+
+.light-bg .todos-bg main .todos .todo-options .active {
+  color: #3a7bfd;
+}
+
+.light-bg .todos-bg main .todos .todo-list li:nth-child(1) {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.light-bg .todos-bg main .todos .todo-list li {
+  padding: 22px 0px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#d6d6d6), to(#d6d6d6));
+  background-image: linear-gradient(to right, #d6d6d6, #d6d6d6);
+  background-repeat: no-repeat;
+  background-size: 99% 1px;
+  background-position: bottom;
+  background-color: white;
+}
+
+.light-bg .todos-bg main .todos .todo-list li .not-complete {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: 20px;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+}
+
+.light-bg .todos-bg main .todos .todo-list li .completed {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.light-bg .todos-bg main .todos .todo-list li span {
+  font-size: 1.8rem;
+  width: 73%;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #484b6a;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.light-bg .todos-bg main .todos .todo-list li .x {
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.light-bg .todos-bg main .todos .todo-list li .completed-text {
+  color: #d2d3db;
+  text-decoration: line-through;
+}
+
+@-webkit-keyframes removeItem {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes removeItem {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+.light-bg .todos-bg main .mobile {
+  display: none;
+}
+
+.dark-bg header {
+  background-image: url("../images/bg-desktop-dark.jpg");
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+}
+
+.dark-bg .empty-space span {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.6rem;
+  color: #9394a5;
+  text-align: center;
+}
+
+.dark-bg .todos-bg {
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0%;
+  overflow-y: auto;
+}
+
+.dark-bg .todos-bg main {
+  background-color: transparent;
+  width: 480px;
+  margin: auto;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+}
+
+.dark-bg .todos-bg main .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.dark-bg .todos-bg main .title h6 {
+  font-size: 3.2rem;
+  letter-spacing: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.dark-bg .todos-bg main .title button {
+  margin-left: auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.dark-bg .todos-bg main form {
+  position: relative;
+  z-index: 3;
+  background-color: #393a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.dark-bg .todos-bg main form .circle {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: 20px;
+  border: 1px solid #777a92;
+  cursor: pointer;
+}
+
+.dark-bg .todos-bg main form input {
+  height: 100%;
+  width: 85%;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1.8rem;
+  padding-right: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #cacde8;
+  background-color: transparent;
+}
+
+.dark-bg .todos-bg main form input:focus {
+  outline: none;
+}
+
+.dark-bg .todos-bg main .todos {
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px 5px 0px 0px;
+  -webkit-box-shadow: 1px 1px 20px 0px #777a92;
+          box-shadow: 1px 1px 20px 0px #777a92;
+}
+
+.dark-bg .todos-bg main .todos .mobile {
+  display: none;
+}
+
+.dark-bg .todos-bg main .todos .todo-options {
+  height: 70px;
+  width: 100%;
+  background-color: #393a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.dark-bg .todos-bg main .todos .todo-options .count span {
+  font-size: 1.4rem;
+  color: #9394a5;
+  font-weight: 700;
+}
+
+.dark-bg .todos-bg main .todos .todo-options .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 35%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dark-bg .todos-bg main .todos .todo-options button {
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  color: #9394a5;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+.dark-bg .todos-bg main .todos .todo-options button:hover {
+  color: white;
+}
+
+.dark-bg .todos-bg main .todos .todo-options .active {
+  color: #3a7bfd;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li:nth-child(1) {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li {
+  padding: 22px 0px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#777a92), to(#777a92));
+  background-image: linear-gradient(to right, #777a92, #777a92);
+  background-repeat: no-repeat;
+  background-size: 99% 1px;
+  background-position: bottom;
+  background-color: #393a4c;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li .not-complete {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: 20px;
+  border: 1px solid #777a92;
+  cursor: pointer;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li .completed {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li span {
+  font-size: 1.8rem;
+  width: 73%;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #cacde8;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li .x {
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li .x svg path {
+  fill: #fafafa;
+}
+
+.dark-bg .todos-bg main .todos .todo-list li .completed-text {
+  color: #777a92;
+  text-decoration: line-through;
+}
+
+@keyframes removeItem {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+.dark-bg .todos-bg main .mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .light-bg header {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+  .light-bg .todos-bg main {
+    width: 80%;
+    min-width: 300px;
+  }
+  .light-bg .todos-bg main .todos {
+    margin-bottom: 20px;
+  }
+  .light-bg .todos-bg main .todos .todo-options .desktop {
+    display: none;
+  }
+  .light-bg .todos-bg main .todos .todo-list li .not-complete {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+  }
+  .light-bg .todos-bg main .mobile {
+    height: 55px;
+    width: 100%;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: auto;
+    padding: 0px 80px;
+    -webkit-box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+            box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+  }
+  .light-bg .todos-bg main .mobile button {
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: none;
+    color: #9394a5;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-transition: 200ms ease;
+    transition: 200ms ease;
+  }
+  .light-bg .todos-bg main .mobile .active {
+    color: #3a7bfd;
+  }
+  .dark-bg header {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+  .dark-bg .todos-bg main {
+    width: 80%;
+    min-width: 300px;
+  }
+  .dark-bg .todos-bg main .todos {
+    margin-bottom: 20px;
+  }
+  .dark-bg .todos-bg main .todos .todo-options .desktop {
+    display: none;
+  }
+  .dark-bg .todos-bg main .todo-list li .not-complete {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+  }
+  .dark-bg .todos-bg main .mobile {
+    height: 55px;
+    width: 100%;
+    background-color: #393a4c;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: auto;
+    padding: 0px 80px;
+    -webkit-box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+            box-shadow: 1px 1px 20px 0px rgba(180, 180, 180, 0.699);
+  }
+  .dark-bg .todos-bg main .mobile button {
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: none;
+    color: #9394a5;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-transition: 200ms ease;
+    transition: 200ms ease;
+  }
+  .dark-bg .todos-bg main .mobile .active {
+    color: #3a7bfd;
+  }
+}
+/*# sourceMappingURL=style.css.map */
